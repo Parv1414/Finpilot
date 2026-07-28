@@ -177,116 +177,121 @@ export default function Landing() {
       </AnimatePresence>
 
       {/* Hero */}
-      <section className="relative min-h-screen pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 hero-gradient flex flex-col">
+      <section className="relative min-h-screen pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-0 px-4 sm:px-6 lg:px-8 hero-gradient flex flex-col">
         {/* Orbs */}
         <div className="absolute top-20 left-1/4 w-72 sm:w-80 md:w-96 h-72 sm:h-80 md:h-96 bg-emerald-500/[0.06] rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-40 right-1/4 w-64 sm:w-72 md:w-80 h-64 sm:h-72 md:h-80 bg-blue-500/[0.05] rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 sm:w-96 md:w-[600px] h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
 
-        <div className="flex-1 flex flex-col justify-center w-full max-w-6xl mx-auto">
-          <div className="max-w-4xl mx-auto w-full text-center">
+        <div className="flex-1 flex items-center w-full max-w-7xl mx-auto">
+          <div className="w-full grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-center">
+
+            {/* Left: Text Content */}
+            <div className="text-center lg:text-left pt-8 lg:pt-0">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 mb-6 sm:mb-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm text-emerald-400 font-medium whitespace-nowrap"
+              >
+                <Sparkles size={12} className="sm:size-[14px]" />
+                <span className="hidden sm:inline">India's Smart</span> AI Personal Finance Platform
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6"
+              >
+                Take Control of{' '}
+                <span className="gradient-text">Your Finances</span>
+                <br />
+                Like a Pro
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-base sm:text-lg md:text-xl text-slate-400 max-w-lg mb-8 sm:mb-10 leading-relaxed mx-auto lg:mx-0"
+              >
+                FinPilot uses AI to analyze your UPI spending, track Mutual Funds & SIPs, manage EMIs, and guide you toward your financial goals — all in one beautiful dashboard connected to Indian Banks.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-center lg:justify-start gap-3 sm:gap-4"
+              >
+                <Link to="/register" className="w-full sm:w-auto">
+                  <Button variant="primary" size="lg" iconRight={ArrowRight} fullWidth>
+                    Start for Free
+                  </Button>
+                </Link>
+                <Link to="/dashboard" className="w-full sm:w-auto">
+                  <Button variant="secondary" size="lg" fullWidth>
+                    View Demo →
+                  </Button>
+                </Link>
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="text-xs text-slate-600 mt-3 sm:mt-4"
+              >
+                No credit card required · Free forever plan available
+              </motion.p>
+            </div>
+
+            {/* Right: Dashboard Preview */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 mb-6 sm:mb-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm text-emerald-400 font-medium whitespace-nowrap"
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative pb-8 sm:pb-12 lg:pb-0"
             >
-              <Sparkles size={12} className="sm:size-[14px]" />
-              <span className="hidden sm:inline">India's Smart</span> AI Personal Finance Platform
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6"
-            >
-              Take Control of{' '}
-              <span className="gradient-text">Your Finances</span>
-              <br className="hidden sm:block" />
-              Like a Pro
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2 sm:px-0"
-            >
-              FinPilot uses AI to analyze your UPI spending, track Mutual Funds & SIPs, manage EMIs, and guide you toward your financial goals — all in one beautiful dashboard connected to Indian Banks.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
-            >
-              <Link to="/register" className="w-full sm:w-auto">
-                <Button variant="primary" size="lg" iconRight={ArrowRight} fullWidth>
-                  Start for Free
-                </Button>
-              </Link>
-              <Link to="/dashboard" className="w-full sm:w-auto">
-                <Button variant="secondary" size="lg" fullWidth>
-                  View Demo →
-                </Button>
-              </Link>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="text-xs text-slate-600 mt-3 sm:mt-4"
-            >
-              No credit card required · Free forever plan available
-            </motion.p>
-          </div>
-
-          {/* Dashboard Preview */}
-          <motion.div
-            initial={{ opacity: 0, y: 48 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 sm:mt-16 md:mt-20 w-full max-w-5xl mx-auto px-0 sm:px-2"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08080f] via-transparent to-transparent z-10 pointer-events-none" style={{ top: '60%' }} />
-              <div className="glass rounded-xl sm:rounded-2xl border border-white/[0.08] overflow-hidden shadow-2xl shadow-black/50">
-                {/* Fake browser bar */}
-                <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 border-b border-white/[0.07] bg-white/[0.02]">
-                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-rose-500/60" />
-                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-amber-500/60" />
-                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-emerald-500/60" />
-                  <div className="flex-1 ml-2 sm:ml-4 bg-white/[0.04] rounded-lg py-1 px-2 sm:px-3 text-[10px] sm:text-xs text-slate-500 max-w-[140px] sm:max-w-xs truncate">
-                    app.finpilot.io/dashboard
-                  </div>
-                </div>
-                {/* Preview Content */}
-                <div className="p-3 sm:p-4 md:p-6 grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
-                  {[
-                    { label: 'Total Balance', val: '₹9,80,000', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
-                    { label: 'Income', val: '₹80,000', color: 'text-blue-400', bg: 'bg-blue-500/10' },
-                    { label: 'Expenses', val: '₹32,000', color: 'text-rose-400', bg: 'bg-rose-500/10' },
-                    { label: 'Savings Rate', val: '60.0%', color: 'text-violet-400', bg: 'bg-violet-500/10' },
-                  ].map((s) => (
-                    <div key={s.label} className={`${s.bg} rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-white/[0.06]`}>
-                      <p className="text-[10px] sm:text-xs text-slate-500 mb-0.5 sm:mb-1 truncate">{s.label}</p>
-                      <p className={`text-sm sm:text-base md:text-xl font-bold font-display ${s.color} truncate`}>{s.val}</p>
+              <div className="absolute -top-20 -right-20 w-72 h-72 bg-emerald-500/[0.04] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08080f] via-transparent to-transparent z-10 pointer-events-none lg:hidden" style={{ top: '55%' }} />
+                <div className="glass rounded-xl sm:rounded-2xl border border-white/[0.08] overflow-hidden shadow-2xl shadow-black/50 lg:shadow-[0_0_80px_rgba(16,185,129,0.12)]">
+                  {/* Fake browser bar */}
+                  <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-3.5 border-b border-white/[0.07] bg-white/[0.02]">
+                    <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-rose-500/60" />
+                    <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-amber-500/60" />
+                    <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-emerald-500/60" />
+                    <div className="flex-1 ml-2 sm:ml-4 bg-white/[0.04] rounded-lg py-1 px-2 sm:px-3 text-[10px] sm:text-xs text-slate-500 max-w-[160px] sm:max-w-xs truncate">
+                      app.finpilot.io/dashboard
                     </div>
-                  ))}
-                </div>
-                <div className="px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6">
-                  <div className="h-16 sm:h-20 md:h-24 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-violet-500/10 rounded-lg sm:rounded-xl flex items-end px-2 sm:px-3 md:px-4 pb-2 sm:pb-3 gap-1.5 sm:gap-2">
-                    {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                      <div key={i} className="flex-1 bg-emerald-400/40 rounded-sm min-h-[4px]" style={{ height: `${h}%` }} />
+                  </div>
+                  {/* Preview Content */}
+                  <div className="p-4 sm:p-5 md:p-7 grid grid-cols-2 gap-3 sm:gap-4">
+                    {[
+                      { label: 'Total Balance', val: '₹9,80,000', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
+                      { label: 'Income', val: '₹80,000', color: 'text-blue-400', bg: 'bg-blue-500/10' },
+                      { label: 'Expenses', val: '₹32,000', color: 'text-rose-400', bg: 'bg-rose-500/10' },
+                      { label: 'Savings Rate', val: '60.0%', color: 'text-violet-400', bg: 'bg-violet-500/10' },
+                    ].map((s) => (
+                      <div key={s.label} className={`${s.bg} rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 border border-white/[0.06]`}>
+                        <p className="text-[10px] sm:text-xs text-slate-500 mb-1 sm:mb-1.5 truncate">{s.label}</p>
+                        <p className={`text-base sm:text-lg md:text-2xl font-bold font-display ${s.color} truncate`}>{s.val}</p>
+                      </div>
                     ))}
+                  </div>
+                  <div className="px-4 sm:px-5 md:px-7 pb-4 sm:pb-5 md:pb-7">
+                    <div className="h-20 sm:h-24 md:h-32 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-violet-500/10 rounded-lg sm:rounded-xl flex items-end px-3 sm:px-4 md:px-5 pb-2 sm:pb-3 md:pb-4 gap-2 sm:gap-3">
+                      {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
+                        <div key={i} className="flex-1 bg-emerald-400/40 rounded-sm min-h-[4px]" style={{ height: `${h}%` }} />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
